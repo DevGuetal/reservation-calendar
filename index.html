@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="styles/bootstrap.css">
+  <link rel="stylesheet" href="styles/index.css"/>
+</head>
+<body ng-app="sample">
+<div class="row-fluid">
+
+
+  <header>Using the calenader below you can change delivery days or put your deliveries on hold:</header>
+  
+  <div class="wrapper">
+
+    <article date-picker="start" ></article>
+
+	<footer>
+		<div class="span10">
+		<ul class="legend">
+			<li><div class="booked"></div>Delivery</li>		
+			<li><div class="on-hold"></div>On hold</li>
+			<li><div class="delivery-available"></div>Delivery Available</li>
+		</ul>
+		<div class="reminder">Please remember to click to save after you've made changes</div>
+		</div>
+		
+		<div class="span2"><button type="submit" class="btn btn-default">SAVE ></button></div>
+		<div class="separator"></div>
+	</footer>
+  </div>
+  
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js"></script>
+<!-- build:js module.min.js -->
+<script src="scripts/datePicker.js"></script>
+<script src="scripts/datePickerUtils.js"></script>
+<!-- endbuild -->
+<script>
+  angular.module('sample', ['datePicker', 'ui.bootstrap']);
+</script>
+</body>
+</html>

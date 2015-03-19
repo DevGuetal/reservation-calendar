@@ -1,0 +1,28 @@
+<div ng-switch="view">
+  <div ng-switch-when="date">
+    <div class="calendar-item" ng-repeat="(index, month) in trimester">
+		
+		<table>
+		  <thead>
+		  <tr>
+			<th colspan="7" class="month">{{getMonth(date, index)|date:"MMMM"}}</th>
+		  </tr>
+		  <tr>
+			<th ng-repeat="day in weekdays" style="overflow: hidden">{{ day|date:"EEE" }}</th>
+		  </tr>
+		  </thead>
+		  <tbody>
+		  <tr ng-repeat="week in month">
+			<td ng-repeat="day in week">
+			  <span
+				ng-class="{'booked':isSameDay(day),'disabled':(day.getMonth()!=date.getMonth() + index),'after':isAfter(day),'before':isBefore(day),'delivery-available':isDeliveryAvaiable(model, day)}"
+				ng-click="setDate(day)" ng-bind="day.getDate()"></span>
+			</td>
+		  </tr>
+		  </tbody>
+		</table>
+	</div>
+	
+	
+  </div>
+</div>
